@@ -5,9 +5,9 @@ submitContact(event){
     event.preventDefault();
 
     let contact ={
-            firstName: this.firstName.value,
-            lastName: this.lastName.value,
-            email: this.email.value,
+            firstName: this.refs.firstName.value,
+            lastName: this.refs.lastName.value,
+            email: this.refs.email.value,
     }
 
     fetch("http://localhost:8080/api/contacts",
@@ -30,18 +30,18 @@ submitContact(event){
 
               <div className="row">
                 <div className="input-field col s6">
-                  <input placeholder="Placeholder"  type="text" className="validate" />
+                  <input placeholder="Placeholder"  ref="firstName" type="text" className="validate" />
                   <label htmlFor="firstName">First Name</label>
                 </div>
                 <div className="input-field col s6">
-                  <input type="text" className="validate" />
+                  <input type="text" ref="lastName" className="validate" />
                   <label htmlFor="lastName">Last Name</label>
                 </div>
               </div>
 
               <div className="row">
                 <div className="input-field col s12">
-                  <input  type="email" className="validate" />
+                  <input  type="email" ref="email" className="validate" />
                   <label htmlFor="email">Email</label>
                 </div>
               </div>
